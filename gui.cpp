@@ -53,7 +53,7 @@ bool WGL_Gui::Create(wstring name, WNDPROC wndProc, Vec2 size, Vec2 pos) {
 	return true;
 }
 
-void WGL_Gui::Render(void (*render)(), void (*hookFun)()) {
+void WGL_Gui::Render(void (*render)(), void (*hookFun)(WGL_Gui& gui)) {
 
 	bool visible = isVisible;
 
@@ -75,11 +75,12 @@ void WGL_Gui::Render(void (*render)(), void (*hookFun)()) {
 		}
 
 		if (visible != isVisible) {
+
 			ShowWindow(window, isVisible ? SW_SHOW : SW_HIDE);
 			visible = isVisible;
 		}
 
-		if (hookFun != nullptr) { hookFun(); };
+		if (hookFun != nullptr) { hookFun(*this); };
 
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplWin32_NewFrame();

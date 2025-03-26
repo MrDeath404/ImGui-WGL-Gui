@@ -39,7 +39,7 @@
     <ClCompile Include="imgui\imgui_widgets.cpp">
       <Filter>Resource Files\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="wgl.cpp">

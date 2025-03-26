@@ -81,7 +81,7 @@ public:
 
 	void Destroy();
 	bool Create(wstring name, WNDPROC wndProc, Vec2 size, Vec2 pos = { 0, 0 });
-	void Render(void (*render)() = nullptr, void (*hookFun)() = nullptr);
+	void Render(void (*render)() = nullptr, void (*hookFun)(WGL_Gui& gui) = nullptr);
 
 	HWND window = nullptr;
 	WNDCLASSEXW wnd = {};
@@ -110,5 +110,3 @@ public:
 
 	string name = "";
 };
-
-inline WGL_Gui gui;
