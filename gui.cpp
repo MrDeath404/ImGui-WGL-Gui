@@ -21,11 +21,12 @@ bool WGL_Gui::Create(wstring name, WNDPROC wndProc, Vec2 size, Vec2 pos) {
 	if (!CreateExWindow(name, wndProc, size, pos)) {
 		return false;
 	}
+
+	if (window == nullptr) { return false; }
+
 	if (!CreateWGL()) {
 		return false;
 	}
-
-	if (window == nullptr) { return false; }
 
 	ShowWindow(window, SW_SHOWNORMAL);
 	UpdateWindow(window);

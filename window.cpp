@@ -45,5 +45,5 @@ bool WGL_Gui::CreateExWindow(wstring name, WNDPROC wndProc, Vec2 size, Vec2 pos)
 		wnd.hInstance, nullptr
 	);
 
-	if (window == nullptr) { return false; }
+	return (window != nullptr);
 }
